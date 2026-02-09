@@ -1,0 +1,10 @@
+{
+  "name": "ifuku-todo",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix client\" \"npm start --prefix server\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.0"
+  }
+}

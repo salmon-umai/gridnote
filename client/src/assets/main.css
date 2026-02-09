@@ -1,0 +1,37 @@
+:root {
+/*初期テーマ 
+:root グローバル変数を定義*/
+ --theme-main: #8eadd7;
+ --theme-accent: #f5d694;
+ --theme-sub: #F7F7F7;
+ --theme-hover: #455b7c;
+ --theme-font: #0d346b;
+ --theme-hover2: #082347;
+ --theme-icon: #fff;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: auto;
+}
+
+button {
+    border: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.app-title  {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--theme-accent);
+  font-family: "Walter Turncoat", cursive;
+}
+
+.layout {
+  min-width: 800px;
+}
