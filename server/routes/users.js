@@ -76,11 +76,6 @@ router.get("/me", authMiddleware, dbGuard, async (req, res) => {
 
 //テーマカラー更新
 router.put("/theme", authMiddleware, dbGuard, async (req, res) => {
-     console.log("🔥 theme update API called");
-  console.log("user_id:", req.user_id);
-  console.log("body:", req.body);
-
-  
     const userId = req.user_id;
     const { theme_id } = req.body;
 

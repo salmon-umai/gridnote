@@ -136,7 +136,7 @@ const addCategory = async () => {
             </div>
 
             <!--カテゴリの追加-->
-            <div class="add-category" @click="console.log('open!'); openCategory = true">
+            <div class="add-category" @click="openCategory = true">
                 ＋ 新しいカテゴリ
             </div>
             <!--入力フォーム画面中央モーダル-->

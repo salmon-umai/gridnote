@@ -4,8 +4,6 @@ import { authMiddleware } from "../middleware/authMiddleware.js"
 
 const router = express.Router();
 
-console.log("calendar.js 読み込まれた");
-
 //DBガード用ミドルウェア
 const dbGuard = (req, res, next) => {
     if(!pool) {

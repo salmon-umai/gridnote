@@ -1,5 +1,5 @@
 <script setup lang="js">
-import { readonly, ref } from 'vue';
+import { ref } from 'vue';
 
 //画像読み込み
 import starOn from "@/assets/img/star-on.svg";
@@ -41,7 +41,7 @@ const setHover = (val) => {
          class="star"
          @mouseover="setHover(star)"
          @mouseleave="setHover(0)"
-         @click="console.log('選択した星：', star); setRating(star)"></img>
+         @click="setRating(star)"></img>
          <!--
          (hoverValue >= star || props.modelValue >= star):
          マウスで触ってる星以上、または

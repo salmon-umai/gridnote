@@ -9,8 +9,6 @@ const calendarItems = ref([]);
 onMounted(async () => {
     try {
     const res = await api.get(`/api/calendar`);  
-    console.log("calendar api result:", res.data);
-    
     calendarItems.value = res.data.map(item => ({
         ...item,
         dateKey: item.deadline.slice(0, 10)//yyyy-mm-dd

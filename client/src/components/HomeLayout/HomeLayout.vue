@@ -365,8 +365,6 @@ const updateDone = async (item) => {
          is_done: item.is_done
       });
    } catch (err) {
-      console.log("完了状態更新エラー", err);
-      //失敗したら元に戻す
       item.is_done = !item.is_done;
    }
 }

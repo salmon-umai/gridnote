@@ -7,8 +7,6 @@ import { authMiddleware } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
-console.log("item.js 読み込まれた");
-
 //DBガード用ミドルウェア
 const dbGuard = (req, res, next) => {
     if(!pool) {
@@ -124,8 +122,6 @@ router.post("/", authMiddleware, dbGuard, async(req, res) => {
 //削除API　POST
 // （論理削除：表示されなくなるだけでDBには残る）
 router.post("/delete",  authMiddleware, dbGuard, async(req, res) => {
-    console.log("delete api 送られてきた情報 item_ids:");
-    
     const userId = req.user_id;
     const { item_ids } = req.body;
 
@@ -142,7 +138,6 @@ router.post("/delete",  authMiddleware, dbGuard, async(req, res) => {
         `;
 
         const [result] = await pool.query(sql, [item_ids, userId]);
-        console.log("MySQL result(結果):", result);
 
         res.json({ deleted: result.affectedRows});
         //result.affectedRows:SQL が影響を与えた行数

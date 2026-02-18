@@ -40,11 +40,6 @@ const editingCategoryId = ref(null);
 const isDeleteOpen = ref(false);
 const deleteTarget = ref(null);
 
-const selectCategory = (cat) => {
-    selectedCategoryId.value = cat.id;
-    emit("select-category", cat);
-};
-
 const openDelete = (cat) => {
     deleteTarget.value = cat;
     isDeleteOpen.value = true;
@@ -67,7 +62,6 @@ const fontPreset = [
 
 //カテゴリ編集
 const openEdit = (cat) => {
-    console.log("openEdit Click", cat);
     editingCategory.value = { ...cat };
     isEditOpen.value = true;
 
@@ -132,28 +126,6 @@ const updateCategory = async () => {
   isEditOpen.value = false;
 };
 
-/*
-const updateCategory = async () => {
-    await api.put(`/api/category/${editingCategoryId.value}`, {
-        cate_name: editingCategory.value.name,
-        bg_color: editingCategory.value.bg,
-        font_color: editingCategory.value.color
-    });
-
-    //フロント側のカテゴリ一覧を更新
-    const tareget = categories.value.find(
-        C => C.id === editingCategoryId.value
-    );
-
-    if (tareget) {
-        tareget.name = editingCategory.value.name;
-        tareget.bg = editingCategory.value.bg;
-        tareget.color = editingCategory.value.color;
-    }
-
-    isEditOpen.value = false;
-};
-*/
 
 //削除処理
 const confirmDelete = async () => {
@@ -167,33 +139,6 @@ const confirmDelete = async () => {
 
   isDeleteOpen.value = false;
 };
-/*
-
-const confirmDelete = async () => {
-    try {
-        await api.delete(`/api/category/${deleteTarget.value.id}`);
-
-        //カテゴリ削除後に更新
-        const newCategories = categories.value.filter(
-            c => c.id !== deleteTarget.value.id
-        );
-
-        //Settingの一覧を即更新
-        categories.value = newCategories;
-
-        //Sidebar、Homeに反映
-        emit("update-categories", newCategories);
-
-        isDeleteOpen.value = false;
-        deleteTarget.value = null;
-    } catch (err) {
-        console.error("カテゴリ削除失敗", err);
-    }
-
-    isDeleteOpen.value = false;
-    deleteIcon.value = null;
-};
-*/
 
 const selectTheme = async (themeId) => {
     applyTheme(themes[themeId]);
@@ -363,6 +308,7 @@ const selectTheme = async (themeId) => {
     opacity: 0.6;
     width: 20px;
     height: auto;
+    cursor: pointer;
 }
 
 .icon-btn:hover {
