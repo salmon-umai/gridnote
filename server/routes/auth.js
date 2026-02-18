@@ -47,25 +47,4 @@ router.post("/login", async (req, res) => {
 
 });
 
-//認証ミドルウェア
-/*
-export function authMiddleware(req, res, next) {
-    const header = req.headers.authorization;
-
-    if(!header) {
-        return res.status(401).json({ error: "トークンがありません" });
-    }
-
-    const token = header.split(" ")[1];
-
-    try {
-        const decoded = jwt.verify(token, process.env.JWT_SECRET);
-        req.user_id = decoded.user_id;
-        next();
-    } catch(err) {
-        console.error(err);
-        res.status(401).json({error:"トークンが不正or期限切れ"})
-    }
-}
-*/
 export default router;

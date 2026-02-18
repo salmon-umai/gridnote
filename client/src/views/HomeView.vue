@@ -1,7 +1,6 @@
 <script setup lang="js">
 import { ref, watch, onMounted, computed } from 'vue';
 
-//import TheWelcome from '../components/TheWelcome.vue'
 import Sidebar from '../components/HomeLayout/Sidebar.vue';
 import HomeLayout from '../components/HomeLayout/HomeLayout.vue';
 import Setting from '../components/HomeLayout/Setting.vue';

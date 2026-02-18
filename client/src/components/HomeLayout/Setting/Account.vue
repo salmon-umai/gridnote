@@ -1,5 +1,5 @@
 <script setup lang="js">
-import { ref, onMounted, computed } from "vue";
+import { ref, onMounted } from "vue";
 import { useRouter } from "vue-router";
 import api from "../../../api/axios.js";
 import CenterModal from "@/components/common/CenterModal.vue";

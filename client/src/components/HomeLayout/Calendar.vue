@@ -81,10 +81,6 @@ const prevMonth = () => {
         1
     );
 };
-
-
-
-
 </script>
 
 <template>

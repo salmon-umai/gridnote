@@ -16,11 +16,6 @@ const app = express();
 
 app.use(cors({
   origin: true,
-  /*[
-    "http://localhost:5173",
-    "http://localhost:5174"
-  ],*/
-  //ViteのURL
   credentials: true,
   allowedHeaders: ["Content-Type", "Authorization"],
   methods: ["GET",  "POST", "PUT", "DELETE", "OPTIONS"]

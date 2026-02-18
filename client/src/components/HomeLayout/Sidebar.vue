@@ -1,22 +1,17 @@
 <script setup lang="js">
-import { ref, onMounted, watch } from 'vue';
+import { ref } from 'vue';
 import api from "@/api/axios.js";
 
 import { APP_NAME } from "@/config/appConfig.js";
 
-//import listicon from '@/assets/img/list-icon.svg'
-//import calendaricon from '@/assets/img/calendar-icon.svg'
 import CenterModal from '../common/CenterModal.vue';
 import AddForm from '../common/AddForm.vue';
 
 import SettingIcon from '../icon/SettingIcon.vue';
 
-//const userId = 1;
+
 
 //============カテゴリ追加============
-//const categories = ref([]);
-//{ id: 1, name: "SAMPLE2", color: "#98ffdd" }
-//
 
 // 新規カテゴリ入力欄の状態
 const newCategoryName = ref("");
@@ -37,15 +32,6 @@ const selectCate = (cat) => {
     selecterdCate.value = cat.id;//アクティブ状態を覚えるため(UI)
     emit("select-category", cat);//アクティブ状態の情報を親に送るため
 };
-
-//HOMEに１番目のカテゴリを送る
-//watch(
-//    categories,
-//    () => {
-//        emit("update-categories", categories.value);
-//    },
-//    { immediate:true }
-//);
 
 const props = defineProps({
     categories: {
@@ -249,18 +235,6 @@ body {
 .cat-name {
     font-size: 14px;
     font-weight: 600;
-}
-/*
-.sidebar::after {
-    content: "";
-    position: absolute;
-    right: -6px;
-    top: 0;
-    bottom: 0;
-    width: 1px;
-    height: 100%;
-    background-color: var(--theme-hover);
-    z-index: 800;
 }
 
 /* ===================カテゴリのアニメーション=================== */

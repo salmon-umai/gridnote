@@ -1,6 +1,6 @@
 <script setup lang="js">
 import { ref } from 'vue';
-import { RouterLink, useRouter } from 'vue-router';
+import { RouterLink } from 'vue-router';
 
 import AuthLayout from '../components/AuthLayout.vue';
 import CenterModal from '@/components/common/CenterModal.vue';

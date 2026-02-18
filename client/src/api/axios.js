@@ -17,6 +17,4 @@ api.interceptors.request.use(
 
  );
 
-console.log(api.defaults.baseURL);
-
 export default api;
